@@ -1,0 +1,1 @@
+create table users(u_id int AUTO_INCREMENT PRIMARY KEY, name varchar(255),fatherName varchar(255),address varchar(255),username varchar(255),pass varchar(255),email varchar(255),contact varchar(255),role varchar(255))
