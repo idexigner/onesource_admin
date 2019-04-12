@@ -1,4 +1,8 @@
-var Api="http://1sourceestate.com/onesource_admin/";
+//var Api="http://1sourceestate.com/onesource_admin/";
+var Api="http://localhost/onesource_admin/";
+
+
+
 var purc_id,require_id,available_id,sale_id;
 
 
