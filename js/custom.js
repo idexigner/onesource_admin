@@ -1650,10 +1650,10 @@ function availableDelete(){
 }
 
 function tableLoad(){
-    purchaseTableLoad();
-    saleTableLoad();
-    requireTableLoad();
-    availableTableLoad();
+    //purchaseTableLoad();
+   // saleTableLoad();
+   // requireTableLoad();
+   // availableTableLoad();
 
 }
 
@@ -1683,6 +1683,7 @@ function purchaseTableLoad(){
 
 
 function showPurchaseTable(data){
+    
 
     return `
              <tr onClick="loadPurchaseMod(${data.p_id})">

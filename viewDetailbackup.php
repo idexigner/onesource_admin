@@ -21,13 +21,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Graph CSS -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <!-- jQuery -->
-<!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+<script src="js/jquery-2.1.4.min.js"></script>
 <!-- //jQuery -->
 <!-- tables -->
 <link rel="stylesheet" type="text/css" href="css/table-style.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/basictable.css" /> -->
-<!-- <script type="text/javascript" src="js/jquery.basictable.min.js"></script> -->
-<!-- <script type="text/javascript">
+<link rel="stylesheet" type="text/css" href="css/basictable.css" />
+<script type="text/javascript" src="js/jquery.basictable.min.js"></script>
+<script type="text/javascript">
     $(document).ready(function() {
       $('#table').basictable();
 
@@ -53,26 +53,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         tableWrapper: true
       });
     });
-</script> -->
+</script>
 <!-- //tables -->
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'/>
 <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <!-- lined-icons -->
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
-
-
-<style>
- thead input {
-        width: 100%;
-    }
-    
-    </style>
-
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.dataTables.min.css"/>
- <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
 </head> 
 
 <?php
@@ -137,40 +124,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="w3l-table-info w3l-table-hover">
 					  <h2>Purchase</h2>
 					  
-						<table id="example" class="display" style="width:100%">
-                    <thead>
-                        <tr>
-                            
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Range</th>
-                            <th>Society Name</th>
-														<th>Type</th>
-														<th>Date</th>
-                        </tr>
-                    </thead>
-                    <tbody id="exampleTable">
-
-
-                    </tbody>
-                    <tfoot>
-                        <tr>
-														
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Range</th>
-                            <th>Society Name</th>
-														<th>Type</th>
-														<th>Date</th>
-                        </tr>
-                    </tfoot>
-                </table>
-
-
-
-						<!-- <table id="purchaseTableId" class="table-hover"   >
+            
+						 <table id="purchaseTableId" class="table-hover"   >
 						<thead>
 						  <tr>
 							<th>ID</th>
@@ -187,22 +142,142 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              </tbody>
                         
            
-					  </table>-->
+					  </table>
 
 
 					</div>
 				
 			
 			</div>
-     </div>
+            	</div>
 
 
 
 
 
+		<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+					<div class="w3l-table-info w3l-table-hover">
+					  <h2>Sale</h2>
+					  
+            
+						 <table id="saleTableId" class="table-hover"   >
+						<thead>
+						  <tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Phone Number</th>
+							<th>Complete Address</th>
+							<th>Society Name</th>		
+							<th>Demand</th>	
+							<th>Type</th>	
+							<th>Direction</th>	
+							<th>Floor</th>
+															
+						  </tr>
+						</thead>
+
+						 <tbody id="saleTable">
+                                            
+             </tbody>
+                        
+           
+					  </table>
 
 
-		
+					</div>
+				 
+			
+			</div>
+            	</div>
+                
+
+
+
+								
+			<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+						<div class="w3l-table-info w3l-table-hover">
+							<h2>Require Rent</h2>
+							
+							
+							<table id="requireTableId" class="table-hover"   >
+											<thead>
+												<tr>
+												<th>ID</th>
+												<th>Name</th>
+												<th>Phone Number</th>
+												<th>Range</th>
+												<th>Society Name</th>													
+												<th>Type</th>	
+												<!--<th>Direction</th>	
+												<th>Floor</th>-->
+																				
+												</tr>
+											</thead>
+
+											<tbody id="requireTable">
+																											
+											</tbody>
+																	
+										
+							</table>
+
+
+										</div>
+										
+								
+								</div>
+            	</div>
+
+
+
+
+
+			<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+						<div class="w3l-table-info w3l-table-hover">
+							<h2>Available Rent</h2>
+							
+							
+							<table id="availableTableId" class="table-hover"   >
+											<thead>
+												<tr>
+												<th>ID</th>
+												<th>Name</th>
+												<th>Phone Number</th>
+												<th>Complete Address</th>
+												<th>Society Name</th>					
+												<th>Type</th>	
+												<th>Demand</th>	
+												<th>Area</th>
+												<th>Direction</th>	
+												<th>Floor</th>
+																				
+												</tr>
+											</thead>
+
+											<tbody id="availableTable">
+																											
+											</tbody>
+																	
+										
+								</table>
+
+
+						</div>
+									
+										
+								
+				</div><!-- agile-tables -->
+            </div>
+                
 
 
 
@@ -306,44 +381,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		
 
+<script>				
+	var purchaseTable = document.getElementById('purchaseTableId');
+                
+                for(var i = 1; i < purchaseTable.rows.length; i++)
+                {
+                    purchaseTable.rows[i].onclick = function()
+                    {
+
+											console.log('reached inside purchase trable');
+                      
+												 var idd=this.cells[0].innerHTML;
+
+												// var idd='5';
+
+												//  saveStorage(idd);
+												localStorage.setItem('purchaseIdJavascript',idd);
+												// sessionStorage.setItem('purchaseIdJavascripts',idd);
+
+												//  localStorage.setItem('purchaseIdJavascript', this.cells[0].innerHTML);
+										
+												// var pageId=document.getElementById("pageId").value;
+												// var recPerPageId=document.getElementById("recPerPageId").value;
+												var url="/onesource_admin/viewDetails.php?purchaseIdd="+idd;//+"&page="+pageId+"&rec_per_page="+recPerPageId;
+												window.location.href = url;
+                        //  purchaseIdForm();
+										}
+								}
 
 
 
-<script>
 
 
-        $(document).ready(function() {
-    // Setup - add a text input to each footer cell
-    $('#example thead tr').clone(true).appendTo( '#example thead' );
-    $('#example thead tr:eq(1) th').each( function (i) {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
- 
-        $( 'input', this ).on( 'keyup change', function () {
-            if ( table.column(i).search() !== this.value ) {
-                table
-                    .column(i)
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
- 
-    var table = $('#example').DataTable( {
-        orderCellsTop: true,
-        fixedHeader: true
-    } );
-} );
-                 
-                 </script>
-
-
-
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
-
-
-<script src="js/tableLoad.js"></script>
+</script>
 							<script>
 							var toggle = true;
 										
@@ -366,7 +436,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</script>
 <!--js -->
 <script src="js/custom.js"></script>
-<!-- <script src="js/jquery.nicescroll.js"></script> -->
+<script src="js/jquery.nicescroll.js"></script>
 <script src="js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
