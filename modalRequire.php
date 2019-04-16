@@ -18,7 +18,7 @@
                                                             </div>  -->
 
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">User ID: </label> <span id="requireUserId">  </span></div>
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Require ID: </label> <span id="requireUserId">  </span></div>
                                                                 <div class="col-12 col-md-9" style="background-color:white;"><input type="hidden"  id="userId" name="userId"  class="form-control" >
                                                                     <!--<small class="form-text text-muted">Enter Event T</small>-->
                                                                 </div>

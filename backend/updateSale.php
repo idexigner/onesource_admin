@@ -16,7 +16,7 @@ include 'DBConfig.php';
      $scompleteAddress = $obj['scompleteAddress'];
      $SsocietyName = $obj['SsocietyName'];
      $stype = $obj['stype'];
-     $sDemand = $obj['sDemand'];
+     $sDemand = $obj['sdemand'];
      $snature = $obj['snature'];
      $sarea = $obj['sarea'];
      $sareaDropValue = $obj['sareaDropValue'];
@@ -35,12 +35,16 @@ include 'DBConfig.php';
      $snearby = $obj['snearby'];
      $sotherFacilites = $obj['sotherFacilites'];
      $shealthFacilites = $obj['shealthFacilites'];
+     $spicName = $obj['spicName'];
+     $spicNumber = $obj['spicNumber'];
 
 
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
+    //$result= $con->query("update sale set sname='$sname' where s_id='$s_id'");
 
-    $result= $con->query("update sale set sname='$sname' ,sphoneNumber='$sphoneNumber' ,scareOf='$scareOf' ,scompleteAddress='$scompleteAddress'  ,ssocietyName='$SsocietyName'  ,stype='$stype'  ,sdemand='$sDemand',snature='$snature'  ,sarea='$sarea'  ,sareaDrop='$sareaDropValue'  ,sdirection='$sDirectionValue'  ,sfloor='$sfloorDropValue'  ,sfloorOther='$sfloorCheckOther'  ,sroom='$sroom'  ,sroomOther='$sroomOther'  ,sdocument='$sdocument'   ,sauthority='$sauthority'    ,spayment='$spayment'  ,spaymentOther1='$spaymentOtherText'  ,sutility='$sutility'  ,sproject='$sProject'  ,sotherDetails='$sotherDetails'  ,snearby='$snearby'  ,sotherFacilities='$sotherFacilites'  ,shealthFacilities='$shealthFacilites'  where s_id='$s_id'");
+
+    $result= $con->query("update sale set sname='$sname' ,sphoneNumber='$sphoneNumber' ,scareOf='$scareOf' ,scompleteAddress='$scompleteAddress'  ,ssocietyName='$SsocietyName'  ,stype='$stype'  ,sdemand='$sDemand',snature='$snature'  ,sarea='$sarea'  ,sareaDrop='$sareaDropValue'  ,sdirection='$sDirectionValue'  ,sfloor='$sfloorDropValue'  ,sfloorOther='$sfloorCheckOther'  ,sroom='$sroom'  ,sroomOther='$sroomOther'  ,sdocument='$sdocument'   ,sauthority='$sauthority'    ,spayment='$spayment'  ,spaymentOther1='$spaymentOtherText'  ,sutility='$sutility'  ,sproject='$sProject'  ,sotherDetails='$sotherDetails'  ,snearby='$snearby'  ,sotherFacilities='$sotherFacilites'  ,shealthFacilities='$shealthFacilites',spicName='$spicName', sPicNumber='$spicNumber' where s_id='$s_id'");
 	
     if($result){
 				echo json_encode("Success");

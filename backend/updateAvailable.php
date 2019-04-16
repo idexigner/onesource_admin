@@ -34,12 +34,14 @@ include 'DBConfig.php';
      $aotherFacilites = $obj['aotherFacilites'];
      $ahealthFacilites = $obj['ahealthFacilites'];
      $aDues = $obj['aDues'];
+     $apicName = $obj['apicName'];
+     $apicNumber = $obj['apicNumber'];
 
 
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("update available_rent set aname='$aname',aphoneNumber='$aphoneNumber',acareOf='$acareOf',acompleteAddress='$acompleteAddress',asocietyName='$asocietyName',atype='$atype',aDemand='$aDemand',anature='$anature',aarea='$aarea',aareaDrop='$aareaValue',aDirection='$aDirectionValue',afloor='$afloorValue',afloorOther='$afloorOther',aroom='$aroom',aroomOther='$aroomOther',adocument='$adocument',aauthority='$aauthority',autility='$autility',aProject='$aProject',aotherDetails='$aotherDetails',anearby='$anearby',aotherFacilities='$aotherFacilites',ahealthFacilities='$ahealthFacilites',aDues='$aDues' where a_id='$a_id'");
+    $result= $con->query("update available_rent set aname='$aname',aphoneNumber='$aphoneNumber',acareOf='$acareOf',acompleteAddress='$acompleteAddress',asocietyName='$asocietyName',atype='$atype',aDemand='$aDemand',anature='$anature',aarea='$aarea',aareaDrop='$aareaValue',aDirection='$aDirectionValue',afloor='$afloorValue',afloorOther='$afloorOther',aroom='$aroom',aroomOther='$aroomOther',adocument='$adocument',aauthority='$aauthority',autility='$autility',aProject='$aProject',aotherDetails='$aotherDetails',anearby='$anearby',aotherFacilities='$aotherFacilites',ahealthFacilities='$ahealthFacilites',aDues='$aDues',apicName='$apicName',aPicNumber='$apicNumber' where a_id='$a_id'");
 	
     if($result){
 				echo json_encode("Success");
@@ -51,24 +53,7 @@ include 'DBConfig.php';
 			}
 
 
-		// if($result->num_rows>0){
-
-        //     while($row[] = $result->fetch_assoc()) {
-
-        //         $tem = $row;
-                
-        //         $json = json_encode($tem);
-                
-        //         }
-        //         echo $json;	
-		// }
-		// else
-		// {		
-		//     echo  json_encode('No Update'); // alert msg in react native
-
-		// }
 	
-
 ?>
 
 

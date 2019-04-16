@@ -129,6 +129,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				     <div class="clearfix"> </div>	
 				</div>
 <!--heder end here-->
+
+<!--------------------------------------------------------------------------------------------------------------------
+Purchase table Start
+------------------------>
  
 <div class="agile-grids">	
 				<!-- tables -->
@@ -137,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="w3l-table-info w3l-table-hover">
 					  <h2>Purchase</h2>
 					  
-						<table id="example" class="display" style="width:100%">
+						<table id="purchaseWholeTable" class="display" style="width:100%">
                     <thead>
                         <tr>
                             
@@ -150,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 														<th>Date</th>
                         </tr>
                     </thead>
-                    <tbody id="exampleTable">
+                    <tbody id="purchaseTableBody">
 
 
                     </tbody>
@@ -168,27 +172,65 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </tfoot>
                 </table>
 
+					</div>
+				
+			
+			</div>
+     </div>
+
+<!--------------------------------------------------------------------------------------------------------------------
+Purchase table End
+------------------------>
 
 
-						<!-- <table id="purchaseTableId" class="table-hover"   >
-						<thead>
-						  <tr>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Phone Number</th>
-							<th>Range</th>
-							<th>Society Name</th>		
-							<th>Type</th>						
-						  </tr>
-						</thead>
 
-						 <tbody id="purchaseTable">
-                                            
-             </tbody>
-                        
-           
-					  </table>-->
 
+
+<!--------------------------------------------------------------------------------------------------------------------
+Sale table Start
+------------------------>
+
+<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+					<div class="w3l-table-info w3l-table-hover">
+					  <h2>Sale</h2>
+					  
+						<table id="saleWholeTable" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Society Name</th>
+														<th>Demand</th>
+														<th>Type</th>
+														<th>Direction</th>
+														<th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="saleTableBody">
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+														
+												<th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Society Name</th>
+														<th>Demand</th>
+														<th>Type</th>
+														<th>Direction</th>
+														<th>Date</th>
+                        </tr>
+                    </tfoot>
+                </table>
 
 					</div>
 				
@@ -196,6 +238,138 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
      </div>
 
+
+
+<!--------------------------------------------------------------------------------------------------------------------
+Sale table End
+------------------------>
+
+
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------
+Available table Start
+------------------------>
+
+
+<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+					<div class="w3l-table-info w3l-table-hover">
+					  <h2>Available</h2>
+					  
+						<table id="availableWholeTable" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Society Name</th>
+														<th>Type</th>
+														<th>Demand</th>	
+														<th>Area</th>													
+														<th>Direction</th>
+														<th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableTableBody">
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+												<th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Society Name</th>
+														<th>Type</th>
+														<th>Demand</th>	
+														<th>Area</th>													
+														<th>Direction</th>
+														<th>Date</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+					</div>
+				
+			
+			</div>
+     </div>
+
+
+<!--------------------------------------------------------------------------------------------------------------------
+Available table End
+------------------------>
+
+
+
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------
+Required table Start
+------------------------>
+
+
+
+<div class="agile-grids">	
+				<!-- tables -->
+				
+				<div class="agile-tables">
+					<div class="w3l-table-info w3l-table-hover">
+					  <h2>Require</h2>
+					  
+						<table id="requireWholeTable" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Range</th>
+                            <th>Society Name</th>
+														<th>Type</th>
+														<th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requireTableBody">
+
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+												
+													<th>ID</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Range</th>
+                            <th>Society Name</th>
+														<th>Type</th>
+														<th>Date</th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+					</div>
+				
+			
+			</div>
+     </div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------------------
+Required table End
+------------------------>
 
 
 
@@ -213,46 +387,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
  <?php include 'modalAvailable.php'; ?>     
 
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     
 
 
 		<!-- /script-for sticky-nav -->
@@ -314,26 +449,111 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         $(document).ready(function() {
     // Setup - add a text input to each footer cell
-    $('#example thead tr').clone(true).appendTo( '#example thead' );
-    $('#example thead tr:eq(1) th').each( function (i) {
-        var title = $(this).text();
-        $(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
- 
-        $( 'input', this ).on( 'keyup change', function () {
-            if ( table.column(i).search() !== this.value ) {
-                table
-                    .column(i)
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-    } );
- 
-    var table = $('#example').DataTable( {
-        orderCellsTop: true,
-        fixedHeader: true
-    } );
-} );
+				$('#purchaseWholeTable thead tr').clone(true).appendTo( '#purchaseWholeTable thead' );
+				$('#purchaseWholeTable thead tr:eq(1) th').each( function (i) {
+						var title = $(this).text();
+						$(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
+		
+						$( 'input', this ).on( 'keyup change', function () {
+								if ( table.column(i).search() !== this.value ) {
+										table
+												.column(i)
+												.search( this.value )
+												.draw();
+								}
+						} );
+				} );
+		
+				var table = $('#purchaseWholeTable').DataTable( {
+						orderCellsTop: true,
+						fixedHeader: true
+				} );
+		} );
+
+
+
+
+
+
+
+		$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+				$('#saleWholeTable thead tr').clone(true).appendTo( '#saleWholeTable thead' );
+				$('#saleWholeTable thead tr:eq(1) th').each( function (i) {
+						var title = $(this).text();
+						$(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
+		
+						$( 'input', this ).on( 'keyup change', function () {
+								if ( table.column(i).search() !== this.value ) {
+										table
+												.column(i)
+												.search( this.value )
+												.draw();
+								}
+						} );
+				} );
+		
+				var table = $('#saleWholeTable').DataTable( {
+						orderCellsTop: true,
+						fixedHeader: true
+				} );
+		} );
+
+
+
+
+		
+		$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+				$('#availableWholeTable thead tr').clone(true).appendTo( '#availableWholeTable thead' );
+				$('#availableWholeTable thead tr:eq(1) th').each( function (i) {
+						var title = $(this).text();
+						$(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
+		
+						$( 'input', this ).on( 'keyup change', function () {
+								if ( table.column(i).search() !== this.value ) {
+										table
+												.column(i)
+												.search( this.value )
+												.draw();
+								}
+						} );
+				} );
+		
+				var table = $('#availableWholeTable').DataTable( {
+						orderCellsTop: true,
+						fixedHeader: true
+				} );
+		} );
+
+
+
+
+
+			
+		$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+				$('#requireWholeTable thead tr').clone(true).appendTo( '#requireWholeTable thead' );
+				$('#requireWholeTable thead tr:eq(1) th').each( function (i) {
+						var title = $(this).text();
+						$(this).html( '<input type="text" placeholder="Search '+title+'" style="color:black"/>' );
+		
+						$( 'input', this ).on( 'keyup change', function () {
+								if ( table.column(i).search() !== this.value ) {
+										table
+												.column(i)
+												.search( this.value )
+												.draw();
+								}
+						} );
+				} );
+		
+				var table = $('#requireWholeTable').DataTable( {
+						orderCellsTop: true,
+						fixedHeader: true
+				} );
+		} );
+                 
                  
                  </script>
 

@@ -12,8 +12,8 @@ include 'DBConfig.php';
 
 	
 
-	$result= $con->query("SELECT * FROM purchase");
-	
+	//$result= $con->query("SELECT * FROM purchase");
+	$result= $con->query("SELECT p_id,date,name,phone,ranges,societyName,type FROM purchase");
 	
 		if($result->num_rows>0){
 

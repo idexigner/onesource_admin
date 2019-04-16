@@ -11,7 +11,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="backend/buserUpdate.php" method="POST"class="form-horizontal">
+                                <!-- <form action="backend/buserUpdate.php" method="POST"class="form-horizontal"> -->
+                                <div class="form-horizontal">
                                                             <!--<div class="row form-group">
                                                                 <div class="col col-md-12"><label for="text-input" class=" form-control-label">Domain ID: </label><span id="domainId"></span></div>
                                                                 
@@ -229,6 +230,19 @@
 
                                                             </div>
 
+                                                            <input type="text" name="picNumberPurchase" id="picNumberPurchase" style="display:none">
+                                                            <input type="text" name="picNamePurchase" id="picNamePurchase" style="display:none">
+
+
+                                                            <form id="pPicForm" method='post' action='backend/picUpload.php' enctype='multipart/form-data' >
+                                                                <input type="file" name="file[]" id="pfileName" multiple class="button">
+
+                                                                <input type="text" name="picName" id="pPicName" style="display:none">
+                                                                
+
+                                                                <input type='submit' name='submit' id="pPicSubmit" value='Upload' style="display:none">
+                                                            </form>
+
 
 
                                                             
@@ -250,7 +264,7 @@
                                                                         </div>
                                                                 </div>
 
-                                </form>
+                                </div>
 
 
 							
@@ -258,7 +272,6 @@
                     </div>
                 </div>
 </div>
-
 
 
 

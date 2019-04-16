@@ -31,12 +31,14 @@ include 'DBConfig.php';
      $pnearby = $obj['pnearby'];
      $potherFacilites = $obj['potherFacilites'];
      $phealthFacilites = $obj['phealthFacilites'];
+     $picName = $obj['picName'];
+     $picNumber = $obj['picNumber'];
 
 
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("update purchase set name='$pname' , phone='$pphone' , careOf='$pcareof' , ranges='$prange' , societyName='$psocietyName' , type='$ptype' , nature='$pnature' , area='$parea' , areaUnit='$pareaValue' , payment='$ppayment' , downPayment='$pdown' , schedulePayment='$pshedule' , monthlyPayment='$pmonthly' , floor='$pfloorValue' , floorOther='$pfloorOther' , room='$proom' , roomOther='$proomOther' , otherDetail='$potherDetails' , nearby='$pnearby' , otherFacilities='$potherFacilites' , healthFacilities='$phealthFacilites' where p_id='$p_id'");
+    $result= $con->query("update purchase set name='$pname' , phone='$pphone' , careOf='$pcareof' , ranges='$prange' , societyName='$psocietyName' , type='$ptype' , nature='$pnature' , area='$parea' , areaUnit='$pareaValue' , payment='$ppayment' , downPayment='$pdown' , schedulePayment='$pshedule' , monthlyPayment='$pmonthly' , floor='$pfloorValue' , floorOther='$pfloorOther' , room='$proom' , roomOther='$proomOther' , otherDetail='$potherDetails' , nearby='$pnearby' , otherFacilities='$potherFacilites' , healthFacilities='$phealthFacilites', picName='$picName',picNumber='$picNumber' where p_id='$p_id'");
 	
     if($result){
 				echo json_encode("Success");

@@ -11,17 +11,22 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form  method="POST"class="form-horizontal">
+                                <!-- <form  method="POST"class="form-horizontal"> -->
+                                <div class="form-horizontal">
                                                             <!--<div class="row form-group">
                                                                 <div class="col col-md-12"><label for="text-input" class=" form-control-label">Domain ID: </label><span id="domainId"></span></div>
                                                                 
                                                             </div>  -->
 
                                                             <div class="row form-group">
-                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">User ID: </label> <span id="saleUserId">  </span></div>
+                                                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Sale ID: </label> <span id="saleUserId">  </span></div>
                                                                 <div class="col-12 col-md-9" style="background-color:white;"><input type="hidden"  id="suserId" name="suserId"  class="form-control" >
                                                                     <!--<small class="form-text text-muted">Enter Event T</small>-->
                                                                 </div>
+                                                            </div>
+
+
+                                                            <div id="imageSaleId">
                                                             </div>
 
                                                             <div class="row form-group">
@@ -348,6 +353,20 @@
 
                                                             </div>
 
+                                                            <input type="text" name="picNumberSale" id="picNumberSale" style="display:none">
+                                                            <input type="text" name="picNameSale" id="picNameSale" style="display:none">
+
+
+                                                            <form id="sPicForm" method='post' action='backend/picUpload.php' enctype='multipart/form-data' >
+                                                                <input type="file" name="file[]" id="sfileName" multiple class="button">
+
+                                                                <input type="text" name="picName" id="sPicName" style="display:none">
+                                                                
+
+                                                                <input type='submit' name='submit' id="sPicSubmit" value='Upload' style="display:none">
+                                                            </form>
+
+
 
                                                             
 
@@ -364,7 +383,7 @@
                                                                         </div>
                                                                 </div>
 
-                                </form>
+                                </div>
 
 
 							
