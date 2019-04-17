@@ -125,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 include ('backend/DBConfig.php');
 $rec_per_page = 115;
 
-$q = mysqli_query($con,"select * from users");
+$q = mysqli_query($con,"select * from users where role!='guest'");
 $TotalRocord=mysqli_num_rows($q);
 
 if(@$_GET['page'])

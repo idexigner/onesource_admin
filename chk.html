@@ -29,7 +29,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" type="text/css" href="css/table-style.css" />
     <!-- <link rel="stylesheet" type="text/css" href="css/basictable.css" /> -->
     <!-- <script type="text/javascript" src="js/jquery.basictable.min.js"></script> -->
+    <!-- <script type="text/javascript">
+    $(document).ready(function() {
+      $('#table').basictable();
 
+      $('#table-breakpoint').basictable({
+        breakpoint: 768
+      });
+
+      $('#table-swap-axis').basictable({
+        swapAxis: true
+      });
+
+      $('#table-force-off').basictable({
+        forceResponsive: false
+      });
+
+      $('#table-no-resize').basictable({
+        noResize: true
+      });
+
+      $('#table-two-axis').basictable();
+
+      $('#table-max-height').basictable({
+        tableWrapper: true
+      });
+    });
+</script> -->
     <!-- //tables -->
     <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet'
         type='text/css' />
@@ -68,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 ?>
 
-<body>
+<body onLoad="tableLoad()">
     <!--<body>-->
     <div class="page-container">
         <!--/content-inner-->
@@ -105,22 +131,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                     <div class="clearfix"> </div>
                 </div>
-								<!--heder end here-->
-								<br>
-						<div class="form-group">
-									<!-- <label for="formSelection">(select one):</label> -->
-									<select class="form-control" id="formSelection" >
-										<option value="Purchase">Purchase</option>
-										<option value="Sale">Sale</option>
-										<option value="Available">Available</option>
-										<option value="Require">Require</option>
-									</select>
-						</div>
+                <!--heder end here-->
 
                 <!--------------------------------------------------------------------------------------------------------------------
 Purchase table Start
 ------------------------>
-<div id="purchaseDiv">
 
                 <div class="agile-grids">
                     <!-- tables -->
@@ -164,9 +179,8 @@ Purchase table Start
 
 
                     </div>
-								</div>
-								
-</div>
+                </div>
+
                 <!--------------------------------------------------------------------------------------------------------------------
 Purchase table End
 ------------------------>
@@ -178,7 +192,7 @@ Purchase table End
                 <!--------------------------------------------------------------------------------------------------------------------
 Sale table Start
 ------------------------>
-<div id="saleDiv">
+
                 <div class="agile-grids">
                     <!-- tables -->
 
@@ -226,7 +240,7 @@ Sale table Start
 
                     </div>
                 </div>
-</div>
+
 
 
                 <!--------------------------------------------------------------------------------------------------------------------
@@ -244,7 +258,7 @@ Sale table End
 Available table Start
 ------------------------>
 
-<div id="availableDiv">
+
                 <div class="agile-grids">
                     <!-- tables -->
 
@@ -293,7 +307,7 @@ Available table Start
 
                     </div>
                 </div>
-</div>
+
 
                 <!--------------------------------------------------------------------------------------------------------------------
 Available table End
@@ -309,7 +323,7 @@ Required table Start
 ------------------------>
 
 
-<div id="requireDiv">
+
                 <div class="agile-grids">
                     <!-- tables -->
 
@@ -353,7 +367,7 @@ Required table Start
 
                     </div>
                 </div>
-</div>
+
 
 
                 <!--------------------------------------------------------------------------------------------------------------------
@@ -445,122 +459,113 @@ Required table End
 
     <script>
 
-			$(document).ready(function(){
 
-				$('#purchaseWholeTable thead tr').clone(true).appendTo('#purchaseWholeTable thead');
-        $('#purchaseWholeTable thead tr:eq(1) th').each(function (i) {
-            var title = $(this).text();
-            $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#purchaseWholeTable thead tr').clone(true).appendTo('#purchaseWholeTable thead');
+            $('#purchaseWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
 
-            $('input', this).on('keyup change', function () {
-                if (table.column(i).search() !== this.value) {
-                    table
-                        .column(i)
-                        .search(this.value)
-                        .draw();
-                }
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+            var table = $('#purchaseWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
             });
         });
 
-        var table = $('#purchaseWholeTable').DataTable({
-            orderCellsTop: true,
-            fixedHeader: true
-				});
-				
-			});
-
-        // $(document).ready(function () {
-        //     // Setup - add a text input to each footer cell
-        //     $('#purchaseWholeTable thead tr').clone(true).appendTo('#purchaseWholeTable thead');
-        //     $('#purchaseWholeTable thead tr:eq(1) th').each(function (i) {
-        //         var title = $(this).text();
-        //         $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
-
-        //         $('input', this).on('keyup change', function () {
-        //             if (table.column(i).search() !== this.value) {
-        //                 table
-        //                     .column(i)
-        //                     .search(this.value)
-        //                     .draw();
-        //             }
-        //         });
-        //     });
-
-        //     var table = $('#purchaseWholeTable').DataTable({
-        //         orderCellsTop: true,
-        //         fixedHeader: true
-        //     });
-        // });
 
 
-        // $(document).ready(function () {
-        //     // Setup - add a text input to each footer cell
-        //     $('#saleWholeTable thead tr').clone(true).appendTo('#saleWholeTable thead');
-        //     $('#saleWholeTable thead tr:eq(1) th').each(function (i) {
-        //         var title = $(this).text();
-        //         $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
 
-        //         $('input', this).on('keyup change', function () {
-        //             if (table.column(i).search() !== this.value) {
-        //                 table
-        //                     .column(i)
-        //                     .search(this.value)
-        //                     .draw();
-        //             }
-        //         });
-        //     });
 
-        //     var table = $('#saleWholeTable').DataTable({
-        //         orderCellsTop: true,
-        //         fixedHeader: true
-        //     });
-        // });
 
-        // $(document).ready(function () {
-        //     // Setup - add a text input to each footer cell
-        //     $('#availableWholeTable thead tr').clone(true).appendTo('#availableWholeTable thead');
-        //     $('#availableWholeTable thead tr:eq(1) th').each(function (i) {
-        //         var title = $(this).text();
-        //         $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
 
-        //         $('input', this).on('keyup change', function () {
-        //             if (table.column(i).search() !== this.value) {
-        //                 table
-        //                     .column(i)
-        //                     .search(this.value)
-        //                     .draw();
-        //             }
-        //         });
-        //     });
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#saleWholeTable thead tr').clone(true).appendTo('#saleWholeTable thead');
+            $('#saleWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
 
-        //     var table = $('#availableWholeTable').DataTable({
-        //         orderCellsTop: true,
-        //         fixedHeader: true
-        //     });
-        // });
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
 
-        // $(document).ready(function () {
-        //     // Setup - add a text input to each footer cell
-        //     $('#requireWholeTable thead tr').clone(true).appendTo('#requireWholeTable thead');
-        //     $('#requireWholeTable thead tr:eq(1) th').each(function (i) {
-        //         var title = $(this).text();
-        //         $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+            var table = $('#saleWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+        });
 
-        //         $('input', this).on('keyup change', function () {
-        //             if (table.column(i).search() !== this.value) {
-        //                 table
-        //                     .column(i)
-        //                     .search(this.value)
-        //                     .draw();
-        //             }
-        //         });
-        //     });
 
-        //     var table = $('#requireWholeTable').DataTable({
-        //         orderCellsTop: true,
-        //         fixedHeader: true
-        //     });
-        // });
+
+
+
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#availableWholeTable thead tr').clone(true).appendTo('#availableWholeTable thead');
+            $('#availableWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+            var table = $('#availableWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+        });
+
+
+
+
+
+
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#requireWholeTable thead tr').clone(true).appendTo('#requireWholeTable thead');
+            $('#requireWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+            var table = $('#requireWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+        });
 
 
     </script>

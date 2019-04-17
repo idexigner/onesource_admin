@@ -12,7 +12,7 @@ include 'DBConfig.php';
 
 	
 
-	$result= $con->query("SELECT * FROM sale");
+	$result= $con->query("SELECT s_id,sname,sphoneNumber,scompleteAddress,ssocietyName,sdemand,stype,sdirection,date FROM sale");
 	
 	
 		if($result->num_rows>0){

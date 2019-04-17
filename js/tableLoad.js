@@ -1990,3 +1990,179 @@ function requireDelete(){
 
 }
 
+function formSelectionFunction(){
+
+    alert(document.getElementById("formSelection").selectedIndex);
+}
+var purchaseBool = true;
+var saleBool = true;
+var availableBool = true;
+var requireBool = true;
+
+$( "#formSelection" ).change(function() {
+    // $("#formSelection option").click(function(){
+        var index = document.getElementById("formSelection").selectedIndex;
+        if(index == 0){
+         //   alert(index);
+            viewDetailsLoad();
+        }       
+        else if(index == 1){
+
+            if(saleBool){
+               // saleTableLoad();
+                $('#saleWholeTable thead tr').clone(true).appendTo('#saleWholeTable thead');
+                $('#saleWholeTable thead tr:eq(1) th').each(function (i) {
+                    var title = $(this).text();
+                    $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+
+                    $('input', this).on('keyup change', function () {
+                        if (table.column(i).search() !== this.value) {
+                            table
+                                .column(i)
+                                .search(this.value)
+                                .draw();
+                        }
+                    });
+                });
+            
+
+            var table = $('#saleWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+            
+        }   
+        saleBool=false;
+
+
+
+       //     alert(index);
+            document.getElementById("saleDiv").style.display = "block";
+
+            // $("#purchaseTableBody").html("");
+            // $("#availableTableBody").html("");
+            // $("#requireTableBody").html("");
+            
+
+            document.getElementById("purchaseDiv").style.display = "none";
+            document.getElementById("availableDiv").style.display = "none";
+            document.getElementById("requireDiv").style.display = "none";
+
+            // saleTableLoad();
+        }
+        else if(index == 2){
+
+            if(availableBool){
+               // availableTableLoad();
+
+            $('#availableWholeTable thead tr').clone(true).appendTo('#availableWholeTable thead');
+            $('#availableWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+            var table = $('#availableWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+            
+            }
+
+            availableBool = false;
+
+
+
+
+       //     alert(index);
+            document.getElementById("availableDiv").style.display = "block";
+
+            // $("#purchaseTableBody").html("");
+            // $("#saleTableBody").html("");
+            // $("#requireTableBody").html("");
+
+            document.getElementById("purchaseDiv").style.display = "none";
+            document.getElementById("saleDiv").style.display = "none";
+            document.getElementById("requireDiv").style.display = "none";
+
+            // availableTableLoad();
+        }
+        else{
+
+            
+            if(requireBool){
+               // requireTableLoad();
+            $('#requireWholeTable thead tr').clone(true).appendTo('#requireWholeTable thead');
+            $('#requireWholeTable thead tr:eq(1) th').each(function (i) {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" style="color:black"/>');
+
+                $('input', this).on('keyup change', function () {
+                    if (table.column(i).search() !== this.value) {
+                        table
+                            .column(i)
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+
+            var table = $('#requireWholeTable').DataTable({
+                orderCellsTop: true,
+                fixedHeader: true
+            });
+
+            
+        }
+        requireBool = false;
+
+            
+          //  alert(index);
+            
+            document.getElementById("requireDiv").style.display = "block";
+            // $("#purchaseTableBody").html("");
+            // $("#saleTableBody").html("");
+            // $("#availableTableBody").html("");
+
+            document.getElementById("purchaseDiv").style.display = "none";
+            document.getElementById("saleDiv").style.display = "none";
+            document.getElementById("availableDiv").style.display = "none";
+
+            // requireTableLoad();
+        }
+       // alert(document.getElementById("formSelection").selectedIndex);
+    // });
+   
+  });
+
+
+  viewDetailsLoad();
+  function viewDetailsLoad(){
+
+   
+    if(purchaseBool){
+      
+
+    }
+
+    purchaseBool = false;
+
+    document.getElementById("purchaseDiv").style.display = "block";
+    // $("#saleTableBody").html("");
+    // $("#availableTableBody").html("");
+    // $("#requireTableBody").html("");
+
+    document.getElementById("saleDiv").style.display = "none";
+    document.getElementById("availableDiv").style.display = "none";
+    document.getElementById("requireDiv").style.display = "none";
+
+    // purchaseTableLoad();
+  }
