@@ -1,31 +1,38 @@
 <?php
-session_start();
+// session_start();
 include('DBConfig.php');	
 
 
-$username = $_POST['name'];
-$password = $_POST['password'];
+$json = file_get_contents('php://input');
+ 
+	 // decoding the received JSON and store into $obj variable.
+	 $obj = json_decode($json,true);
 
+	 $username = $obj['name'];
+	 $password = $obj['pass'];
+// $username = $_POST['username'];
+// $password = $_POST['password'];
 
-$username = stripcslashes($username);
-$password = stripcslashes($password);
+	$result= $con->query("select * from users where username = '$username' and pass = '$password'");
+	
+// $result= $conn->query("SELECT * FROM users where username='$username' and password='$password'");
+	
+	if($result->num_rows==0){
+		echo json_encode('Wrong Details');				
+	}
+	else{		
+	// echo json_encode('ok');	
 
-$result = mysqli_query($con,"select * from users where username = '$username' and pass = '$password'")
-or die("Failed to query database".mysql_error());
+	while($row[] = $result->fetch_assoc()) {
 
-if($row = mysqli_fetch_array($result))
-{
-	    $_SESSION['LOGIN_ID']=$row["id"];
-        $_SESSION['username']=$row["username"];
-		// $_SESSION['role']=$row["role"];
-
-		header("Location:../dashboard.php");
-}
-else
-{
-	echo "<script type='text/javascript'>alert('Invalid User Name Or Password ☺ Try Again ☻');</script>";
-    // sleep(2);
-	header("Location:../index.php");
-}
-
+		$tem = $row;
+		
+		$json = json_encode($tem);
+		
+		
+		}	
+		echo $json;	
+	}
+		
 ?>
+

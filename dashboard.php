@@ -29,7 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/icon-font.min.css" type='text/css' />
 <!-- //lined-icons -->
 </head> 
-<body>
+<body >
    <div class="page-container">
    <!--/content-inner-->
 <div class="left-content">
@@ -46,8 +46,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="profile_img">	
 												<!--<span class="prfil-img"><img src="images/in4.jpg" alt=""> </span> -->
 												<div class="user-name">
-													<p>Sir Shamim</p>
-													<span>Administrator</span>
+													<!-- <p>Sir Shamim</p>
+													<span>Administrator</span> -->
+													<?php
+													include 'headerUsername.php';
+													?>
 												</div>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
@@ -57,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<ul class="dropdown-menu drp-mnu">
 											<!--<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> -->
 											<!--<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> -->
-											<li> <a href="index.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a  onclick="logout()" href="index.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
@@ -207,45 +210,10 @@ $rows1 = mysqli_fetch_array($q);
 						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="dashboard.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
-										<li><a href="registerUser.php"><i class="fa fa-user" aria-hidden="true"></i><span>Register User</span><div class="clearfix"></div></a></li>
-										<li><a href="viewUser.php"><i class="fa fa-table" aria-hidden="true"></i><span>View User</span><div class="clearfix"></div></a></li>
-										<li><a href="viewDetails.php"><i class="fa fa-table" aria-hidden="true"></i><span>View Details</span><div class="clearfix"></div></a></li>
-										<!--glyphicon glyphicon-user-->
-										 <!--<li id="menu-academico" ><a href="inbox.html"><i class="fa fa-envelope nav_icon"></i><span>Inbox</span><div class="clearfix"></div></a></li>
-									<li><a href="gallery.html"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Gallery</span><div class="clearfix"></div></a></li>
-									<li id="menu-academico" ><a href="charts.html"><i class="fa fa-bar-chart"></i><span>Charts</span><div class="clearfix"></div></a></li>
-									 <li id="menu-academico" ><a href="#"><i class="fa fa-list-ul" aria-hidden="true"></i><span> Short Codes</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										   <ul id="menu-academico-sub" >
-										   <li id="menu-academico-avaliacoes" ><a href="icons.html">Icons</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="typography.html">Typography</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="faq.html">Faq</a></li>
-										  </ul>
-										</li>
-									<li id="menu-academico" ><a href="errorpage.html"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i><span>Error Page</span><div class="clearfix"></div></a></li>
-									  <li id="menu-academico" ><a href="#"><i class="fa fa-cogs" aria-hidden="true"></i><span> UI Components</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										   <ul id="menu-academico-sub" >
-										   <li id="menu-academico-avaliacoes" ><a href="button.html">Buttons</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="grid.html">Grids</a></li>
-										  </ul>
-										</li>
-									 <li><a href="tabels.html"><i class="fa fa-table"></i>  <span>Tables</span><div class="clearfix"></div></a></li>
-									<li><a href="maps.html"><i class="fa fa-map-marker" aria-hidden="true"></i>  <span>Maps</span><div class="clearfix"></div></a></li>
-							        <li id="menu-academico" ><a href="#"><i class="fa fa-file-text-o"></i>  <span>Pages</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>
-										 <ul id="menu-academico-sub" >
-											<li id="menu-academico-boletim" ><a href="calendar.html">Calendar</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="signin.html">Sign In</a></li>
-											<li id="menu-academico-avaliacoes" ><a href="signup.html">Sign Up</a></li>
-											
-
-										  </ul>
-									 </li>
-									<li><a href="#"><i class="fa fa-check-square-o nav_icon"></i><span>Forms</span> <span class="fa fa-angle-right" style="float: right"></span><div class="clearfix"></div></a>-->
-									  <!--<ul>
-										<li><a href="input.html"> Input</a></li>
-										<li><a href="validation.html">Validation</a></li>
-									</ul>
-									</li>-->
+									<?php
+										include 'menu.php';
+									?>
+										
 								  </ul>
 								</div>
 							  </div>
@@ -335,5 +303,10 @@ $rows1 = mysqli_fetch_array($q);
 	   
 	});
 	</script>
+	<script src="js/custom.js"></script>
+
+<script>
+        window.onload = onLoadFunction('dashboard');
+    </script>
 </body>
 </html>

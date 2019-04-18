@@ -389,3 +389,79 @@ function purchaseIdPass(data){
     //console.log(purc_id);
     loadPurchaseMod();
 }
+
+
+
+function blogin() {
+    //console.log("reached");
+    var name = document.getElementById("name").value;
+    var pass = document.getElementById("password").value;
+
+
+    fetch(Api + 'backend/blogin.php', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: name,
+            pass: pass
+        }),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+        })
+    })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            if (responseJson === "Wrong Details") {
+                alert(responseJson);
+                window.location.href = "/onesource_admin/index.php";
+            }
+            else {
+                // alert("farazedit"+ responseJson[0].role);
+                localStorage.setItem("role", responseJson[0].role);
+                localStorage.setItem("user", responseJson[0].name);
+                localStorage.setItem("url", responseJson[0].url);
+                window.location.href = "/onesource_admin/dashboard.php";
+            }
+       
+
+        })
+        .catch((error) => {
+            // console.error(error);
+            alert('Failed');
+
+            window.location.href = "/onesource_admin/index.php";
+        });
+
+
+}
+
+
+function onLoadFunction(param){
+
+    var role = localStorage.getItem("role");
+    var user = localStorage.getItem("user");
+    var url = localStorage.getItem("url");
+
+    document.getElementById("nameHeader").innerText = user;
+    document.getElementById("roleHeader").innerText = role;
+
+    if(param == 'dashboard'){
+        
+    }
+
+// debugger
+
+
+    
+    
+}
+
+function logout(){
+    alert("Thank you For using One Source System");
+    
+   
+
+    localStorage.setItem("role", "");
+    localStorage.setItem("user", "");
+    localStorage.setItem("url", "");
+    window.location.href  = "/onesource_admin/index.php";
+}

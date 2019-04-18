@@ -38,12 +38,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<form action="backend/blogin.php" method="post">
 			<div class="username">
 				<span class="username">Username:</span>
-				<input type="text" name="name" class="name" placeholder="" required="">
+				<input type="text" name="name" id="name" class="name" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
 			<div class="password-agileits">
 				<span class="username">Password:</span>
-				<input type="password" name="password" class="password" placeholder="" required="">
+				<input type="password" name="password" id="password" class="password" placeholder="" required="">
 				<div class="clearfix"></div>
 			</div>
 			<div class="rem-for-agile">
@@ -51,9 +51,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--<a href="#">Forgot Password</a><br>-->
 			</div>
 			<div class="login-w3">
-					<input type="submit" class="login" value="Sign In">
+					<input type="button" onclick="blogin()" class="login" value="Sign In">
 			</div>
 			<div class="clearfix"></div>
+
 		</form>
 				<!--<div class="back">
 					<a href="index.html">Back to home</a>
@@ -65,5 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	</div>
 	</div>
+
+	<script src="js/custom.js"></script>
 </body>
 </html>
