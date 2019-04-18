@@ -9,10 +9,18 @@ include 'DBConfig.php';
 	 $obj = json_decode($json,true);
 
 
-
+	 $u_id = $obj['u_id'];
+	 $role = $obj['role'];
+ 
+	 if($role=="admin"){
+		 $q = "SELECT a_id,aname,aphoneNumber,acompleteAddress,asocietyName,atype,aDemand,aarea,aDirection,date FROM available_rent";
+	 }
+	 else{
+		 $q = "SELECT a_id,aname,aphoneNumber,acompleteAddress,asocietyName,atype,aDemand,aarea,aDirection,date FROM available_rent where u_id='$u_id'";
+	 }
 	
 
-	$result= $con->query("SELECT a_id,aname,aphoneNumber,acompleteAddress,asocietyName,atype,aDemand,aarea,aDirection,date FROM available_rent");
+	$result= $con->query($q);
 	
 	
 		if($result->num_rows>0){

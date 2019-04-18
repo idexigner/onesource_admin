@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<ul class="dropdown-menu drp-mnu">
 											<!--<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> -->
 											<!--<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> -->
-											<li> <a  onclick="logout()" href="index.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
+											<li> <a onclick="logout()" href="index.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 										</ul>
 									</li>
 								</ul>
@@ -69,11 +69,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				     <div class="clearfix"> </div>	
 
 <?php
-                                                        include ('backend/DBConfig.php');
-                                                        $que="select count(*) from users ";
+						include ('backend/DBConfig.php');
+						$que="select count(*) from users ";
 
-$q = mysqli_query($con,$que);
-$rows1 = mysqli_fetch_array($q);
+						$q = mysqli_query($con,$que);
+						$rows = mysqli_fetch_array($q);
+
+
+						$que1="select count(*) from purchase ";
+
+						$q1 = mysqli_query($con,$que1);
+						$rows1 = mysqli_fetch_array($q1);
+
+
+
+						$que2="select count(*) from sale ";
+
+						$q2 = mysqli_query($con,$que2);
+						$rows2 = mysqli_fetch_array($q2);
+
+
+
+
+						$que3="select count(*) from available_rent ";
+
+						$q3 = mysqli_query($con,$que3);
+						$rows3 = mysqli_fetch_array($q3);
+
+
+
+						$que4="select count(*) from required_rent	 ";
+
+						$q4 = mysqli_query($con,$que4);
+						$rows4 = mysqli_fetch_array($q4);
+
+
 
 
      
@@ -90,74 +120,76 @@ $rows1 = mysqli_fetch_array($q);
 
 <!--four-grids here-->
 		<div class="four-grids">
-					<div class="col-md-12 four-grid">
+				
+
+					<div class="col-md-3 four-grid">
 						<div class="four-agileits">
+						
 							<div class="icon">
-								<i class="glyphicon glyphicon-user" aria-hidden="true"></i>
+								<i class="glyphicon glyphicon-star" aria-hidden="true"></i>
 							</div>
 							<div class="four-text">
-								<h3>Users</h3>
+								<h3>Total Purchase</h3>
 								<h4> <?php echo $rows1['count(*)'];?>  </h4>
-								
 							</div>
+							
 							
 						</div>
 					</div>
 
-
-
-					<!--<div class="col-md-3 four-grid">
-						<div class="four-agileinfo">
-							<div class="icon">
-								<i class="glyphicon glyphicon-list-alt" aria-hidden="true"></i>
-							</div>
-							<div class="four-text">
-								<h3>Clients</h3>
-								<h4>15,520</h4>
-
-							</div>
-							
-						</div>
-					</div>
 					<div class="col-md-3 four-grid">
-						<div class="four-w3ls">
+						<div class="four-agileits">
+						
 							<div class="icon">
-								<i class="glyphicon glyphicon-folder-open" aria-hidden="true"></i>
+								<i class="glyphicon glyphicon-euro" aria-hidden="true"></i>
 							</div>
 							<div class="four-text">
-								<h3>Projects</h3>
-								<h4>12,430</h4>
-								
+								<h3>Total Sale</h3>
+								<h4> <?php echo $rows2['count(*)'];?>  </h4>
 							</div>
+							
 							
 						</div>
 					</div>
+
 					<div class="col-md-3 four-grid">
-						<div class="four-wthree">
+						<div class="four-agileits">
+						
 							<div class="icon">
-								<i class="glyphicon glyphicon-briefcase" aria-hidden="true"></i>
+								<i class="glyphicon glyphicon-minus" aria-hidden="true"></i>
 							</div>
 							<div class="four-text">
-								<h3>Old Projects</h3>
-								<h4>14,430</h4>
-								
+								<h3>Total Available for Rent</h3>
+								<h4> <?php echo $rows3['count(*)'];?>  </h4>
 							</div>
 							
+							
 						</div>
-					</div>-->
+					</div>
+
+					<div class="col-md-3 four-grid">
+						<div class="four-agileits">
+						
+							<div class="icon">
+								<i class="glyphicon glyphicon-asterisk" aria-hidden="true"></i>
+							</div>
+							<div class="four-text">
+								<h3>Total required For Rent</h3>
+								<h4> <?php echo $rows4['count(*)'];?>  </h4>
+							</div>
+							
+							
+						</div>
+					</div>
+
+
+
 					<div class="clearfix"></div>
 				</div>
-<!--//four-grids here-->
-<!--agileinfo-grap-->
 
-	<!--//agileinfo-grap-->
-<!--photoday-section-->	
-			
-                        
-                    
 						<div class="clearfix"></div>
                    
-	<!--//photoday-section-->	
+	
 	<!--w3-agileits-pane-->	
 	<div class="w3-agileits-pane">
 		
@@ -195,9 +227,9 @@ $rows1 = mysqli_fetch_array($q);
 </div>
 <!--inner block end here-->
 <!--copy rights start here-->
-<div class="copyrights">
-	<p>&copy; 2018 OneSouree. All Rights Reserved </p>
-</div>	
+<?php
+include 'footerCopyright.php';
+?>
 <!--COPY rights end here-->
 </div>
 </div>

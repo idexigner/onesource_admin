@@ -68,5 +68,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 
 	<script src="js/custom.js"></script>
+
+	<script>
+        window.onload = indexPage();
+    </script>
 </body>
 </html>

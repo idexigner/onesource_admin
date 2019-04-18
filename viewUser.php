@@ -77,8 +77,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="profile_img">	
 												<!--<span class="prfil-img"><img src="images/in4.jpg" alt=""> </span> -->
 												<div class="user-name">
-													<p>Sir Shamim</p>
-													<span>Administrator</span>
+                        <?php
+													include 'headerUsername.php';
+													?>
 												</div>
 												<i class="fa fa-angle-down"></i>
 												<i class="fa fa-angle-up"></i>
@@ -178,7 +179,7 @@ while($rows = mysqli_fetch_array($q))
 
 
 
-
+            <button type="button" style="display:none;" id="openModal" data-toggle="modal" data-target="#smallmodal">Open Modal</button>
 
 
 <div class="modal" id="smallmodal" style="z-index:10000" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
@@ -218,7 +219,7 @@ while($rows = mysqli_fetch_array($q))
                                                             </div>
                                                             <div class="row form-group">
                                                                 <div class="col col-md-3"><label style="background-color:white;" for="text-input" class=" form-control-label">Email</label></div>
-                                                                <div class="col-12 col-md-9" style="background-color:white;"><input type="email" id="modalEmail" name="email" placeholder="Enter email" class="form-control">
+                                                                <div class="col-12 col-md-9" style="background-color:white;"><input type="text" id="modalEmail" name="email" placeholder="Enter email" class="form-control">
                                                                     <!--<small class="form-text text-muted">Enter Event T</small>-->
                                                                 </div>
                                                             </div>
@@ -230,6 +231,10 @@ while($rows = mysqli_fetch_array($q))
                                                                 </div>
                                                             </div>
 
+                                                            
+
+
+
                                                          <div class="row form-group">
                                                                     <div class="col col-md-3"></div>
                                                                     <div class="col-12 col-md-9" style="background-color:white;">
@@ -237,8 +242,6 @@ while($rows = mysqli_fetch_array($q))
                                                                         <input type="submit"  name="submit" class="btn btn-primary "  style="float:right;display:inline;margin-right:3%;" value="Update">
                                                                         
                                                                         <!--<input type="submit"  name="submit" class="btn btn-primary "  style="float:right" value="Update">-->
-                                                                        
-                                                                        
                                                                         
                                                                         </div>
                                                                 </div>
@@ -265,17 +268,6 @@ while($rows = mysqli_fetch_array($q))
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -362,33 +354,6 @@ while($rows = mysqli_fetch_array($q))
                     </div>
                 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 					</div>
 				  <!--<code class="js">
 					$('#table').basictable();
@@ -419,6 +384,8 @@ var table = document.getElementById('table');
                 {
                     table.rows[i].onclick = function()
                     {
+                      document.getElementById("openModal").click();
+                      // $('#smallmodal').show();
                          //rIndex = this.rowIndex;
                          console.log( this.cells[0].innerHTML);
                          console.log( this.cells[1].innerHTML);
@@ -472,47 +439,6 @@ var table = document.getElementById('table');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- script-for sticky-nav -->
 		<script>
 		$(document).ready(function() {
@@ -535,9 +461,9 @@ var table = document.getElementById('table');
 </div>
 <!--inner block end here-->
 <!--copy rights start here-->
-<div class="copyrights">
-	 <p>&copy; 2018 OneSouree. All Rights Reserved </p>
-</div>	
+<?php
+include 'footerCopyright.php';
+?>
 <!--COPY rights end here-->
 </div>
 </div>
@@ -550,11 +476,10 @@ var table = document.getElementById('table');
 						<div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
                            <div class="menu">
 									<ul id="menu" >
-										<li><a href="dashboard.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span><div class="clearfix"></div></a></li>
-										<li><a href="registerUser.php"><i class="fa fa-user" aria-hidden="true"></i><span>Register User</span><div class="clearfix"></div></a></li>
-										<li><a href="viewUser.php"><i class="fa fa-table" aria-hidden="true"></i><span>View User</span><div class="clearfix"></div></a></li>
-                                        <li><a href="viewDetails.php"><i class="fa fa-table" aria-hidden="true"></i><span>View Details</span><div class="clearfix"></div></a></li>
-								  </ul>
+                  <?php
+										include 'menu.php';
+									?>
+                   </ul>
 								</div>
 							  </div>
 							  <div class="clearfix"></div>		
@@ -580,11 +505,17 @@ var table = document.getElementById('table');
 										});
 							</script>
 <!--js -->
-<script src="js/jquery.nicescroll.js"></script>
+<!-- <script src="js/jquery.nicescroll.js"></script> -->
 <script src="js/scripts.js"></script>
 <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
    <!-- /Bootstrap Core JavaScript -->	   
+   <script src="js/custom.js"></script>
+   <script src="js/tableLoad.js"></script>
+
+   <script>
+        window.onload = onLoadFunction('viewUser');
+    </script>
 
 </body>
 </html>

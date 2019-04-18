@@ -7,8 +7,16 @@ availableTableLoad();
 requireTableLoad();
 
 function purchaseTableLoad(){
+
+    var u_id = localStorage.getItem("u_id");
+    var role = localStorage.getItem("role");
+
     fetch(Api+'backend/showPurchaseTable.php', {
-     method: 'GET',
+     method: 'POST',
+     body: JSON.stringify({
+        u_id:u_id,
+        role: role
+     }),    
      headers: new Headers({
          'content-type': 'application/json',
          'Accept': 'application/json',
@@ -36,12 +44,13 @@ function showPurchaseTables(data){
  return `
           <tr>
             <td>${data.p_id}</td>
-            <td>${data.name}</td>
+            <td>${data.inqName}</td>
             <td>${data.phone}</td>
             <td>${data.ranges}</td>
             <td>${data.societyName}</td>
             <td>${data.type}</td>
             <td>${data.date}</td>
+            <td>${data.userName}</td>
          </tr>
          
          `;
@@ -470,8 +479,15 @@ function purchaseDelete(){
 
 function saleTableLoad(){
 
+    var u_id = localStorage.getItem("u_id");
+    var role = localStorage.getItem("role");
+
     fetch(Api+'backend/showSaleTable.php', {
-     method: 'GET',
+     method: 'POST',
+     body: JSON.stringify({
+        u_id:u_id,
+        role: role
+     }),    
      headers: new Headers({
          'content-type': 'application/json',
          'Accept': 'application/json',
@@ -1089,9 +1105,15 @@ function saleDelete(){
 
 
 function availableTableLoad(){
+    var u_id = localStorage.getItem("u_id");
+    var role = localStorage.getItem("role");
 
     fetch(Api+'backend/showAvailableTable.php', {
-     method: 'GET',
+     method: 'POST',
+     body: JSON.stringify({
+        u_id:u_id,
+        role: role
+     }), 
      headers: new Headers({
          'content-type': 'application/json',
          'Accept': 'application/json',
@@ -1649,8 +1671,15 @@ function availableDelete(){
 
 function requireTableLoad(){
 
+    var u_id = localStorage.getItem("u_id");
+    var role = localStorage.getItem("role");
+
     fetch(Api+'backend/showRequireTable.php', {
-     method: 'GET',
+     method: 'POST',
+     body: JSON.stringify({
+        u_id:u_id,
+        role: role
+     }),    
      headers: new Headers({
          'content-type': 'application/json',
          'Accept': 'application/json',
@@ -1826,9 +1855,6 @@ function requireOnclickFunction(){
 
 
 }
-
-
-
 
 function requireUpdate(){
    

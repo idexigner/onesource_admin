@@ -8,11 +8,20 @@ include 'DBConfig.php';
 	 // decoding the received JSON and store into $obj variable.
 	 $obj = json_decode($json,true);
 
-
+	 $u_id = $obj['u_id'];
+	 $role = $obj['role'];
+ 
+	 if($role=="admin"){
+		 $q = "SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent";
+	 }
+	 else{
+		 $q = "SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent where u_id='$u_id'";
+	 }
+	
 
 	
 
-	$result= $con->query("SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent");
+	$result= $con->query($q);
 	
 	
 		if($result->num_rows>0){

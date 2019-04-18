@@ -86,8 +86,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="profile_img">
                                         <!--<span class="prfil-img"><img src="images/in4.jpg" alt=""> </span> -->
                                         <div class="user-name">
-                                            <p>Sir Shamim</p>
-                                            <span>Administrator</span>
+                                        <?php
+                                            include 'headerUsername.php';
+                                            ?>
                                         </div>
                                         <i class="fa fa-angle-down"></i>
                                         <i class="fa fa-angle-up"></i>
@@ -140,6 +141,7 @@ Purchase table Start
                                         <th>Society Name</th>
                                         <th>Type</th>
                                         <th>Date</th>
+                                        <th>User</th>
                                     </tr>
                                 </thead>
                                 <tbody id="purchaseTableBody">
@@ -156,6 +158,7 @@ Purchase table Start
                                         <th>Society Name</th>
                                         <th>Type</th>
                                         <th>Date</th>
+                                        <th>User</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -386,9 +389,9 @@ Required table End
 </div>-->
                 <!--inner block end here-->
                 <!--copy rights start here-->
-                <div class="copyrights">
-                    <p>&copy; 2018 Virual Wallet. All Rights Reserved |Design by <a href="#">Wasim's Team</a></p>
-                </div>
+                <?php
+include 'footerCopyright.php';
+?>
                 <!--COPY rights end here-->
             </div>
         </div>
@@ -401,20 +404,9 @@ Required table End
             <div style="border-top:1px ridge rgba(255, 255, 255, 0.15)"></div>
             <div class="menu">
                 <ul id="menu">
-                    <li><a href="dashboard.php"><i class="fa fa-tachometer"></i> <span>Dashboard</span>
-                            <div class="clearfix"></div>
-                        </a></li>
-                    <li><a href="registerUser.php"><i class="fa fa-user" aria-hidden="true"></i><span>Register
-                                User</span>
-                            <div class="clearfix"></div>
-                        </a></li>
-                    <li><a href="viewUser.php"><i class="fa fa-table" aria-hidden="true"></i><span>View User</span>
-                            <div class="clearfix"></div>
-                        </a></li>
-                    <li><a href="viewDetails.php"><i class="fa fa-table" aria-hidden="true"></i><span>View
-                                Details</span>
-                            <div class="clearfix"></div>
-                        </a></li>
+                <?php
+										include 'menu.php';
+									?>
 
                 </ul>
             </div>
@@ -598,6 +590,11 @@ Required table End
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- /Bootstrap Core JavaScript -->
+   
+
+    <script>
+        window.onload = onLoadFunction('viewDetail');
+    </script>
 
 </body>
 

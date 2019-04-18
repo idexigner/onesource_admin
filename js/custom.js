@@ -419,6 +419,7 @@ function blogin() {
                 localStorage.setItem("role", responseJson[0].role);
                 localStorage.setItem("user", responseJson[0].name);
                 localStorage.setItem("url", responseJson[0].url);
+                localStorage.setItem("u_id", responseJson[0].u_id);
                 window.location.href = "/onesource_admin/dashboard.php";
             }
        
@@ -433,18 +434,87 @@ function blogin() {
 
 
 }
+function submitInquiry(){ 
+   
+    document.getElementById("viewDetailId").className = "";
+    document.getElementById("submitInquiryId").className = "active";
 
+    var url = localStorage.getItem("url");
 
+    if(window.location.href.includes("localhost")){
+      
+        location.replace("http://localhost/inquiry_demo?uidUrl="+url);
+    }else {
+     
+        location.replace("http://1sourceestate.com/inquiry_demo?uidUrl="+url);
+    }
+  
+}
+
+function indexPage(){
+    // alert("Index");
+    var role = localStorage.getItem("role");
+    // alert(role);
+        //if(role != null ){
+            if(role === "admin" ||  role === "staff"){
+            //alert("Please Login First");
+            window.location.href = "/onesource_admin/dashboard.php";
+            // window.location.href = "/onesource_admin/index.php";
+        }
+        // else{
+        //     window.location.href = "/onesource_admin/dashboard.php";
+        // }
+   
+}
 function onLoadFunction(param){
 
     var role = localStorage.getItem("role");
     var user = localStorage.getItem("user");
     var url = localStorage.getItem("url");
 
+    // alert(role);
+    if(role !== "admin" && role !== "staff"){
+        alert("Please Login First");
+        window.location.href = "/onesource_admin/index.php";
+    }
+
+    if(role === "staff"){
+        document.getElementById("registerUserId").style.display = "none";
+        document.getElementById("viewUserId").style.display = "none";
+    }
+
     document.getElementById("nameHeader").innerText = user;
     document.getElementById("roleHeader").innerText = role;
-
     if(param == 'dashboard'){
+        
+        document.getElementById("dashboardId").className = "active";
+        
+    }
+    else if(param == 'registerUser'){
+            
+
+            if(role == "admin" ){
+                document.getElementById("registerUserId").className = "active";
+            }
+            else{
+                alert("You dont have enough rights");
+            window.location.href  = "/onesource_admin/dashboard.php";
+            }
+    }
+    else if(param == 'viewDetail'){
+       
+        document.getElementById("viewDetailId").className = "active";
+    }
+    else if(param == 'viewUser'){
+
+
+        if(role == "admin" ){
+            document.getElementById("viewUserId").className = "active";
+        }
+        else{
+           // alert("You dont have enough rights");
+        window.location.href  = "/onesource_admin/dashboard.php";
+        }
         
     }
 
@@ -460,8 +530,8 @@ function logout(){
     
    
 
-    localStorage.setItem("role", "");
-    localStorage.setItem("user", "");
-    localStorage.setItem("url", "");
+    localStorage.setItem("role", '');
+    localStorage.setItem("user", '');
+    localStorage.setItem("url", '');
     window.location.href  = "/onesource_admin/index.php";
 }
