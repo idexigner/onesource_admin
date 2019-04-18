@@ -15,7 +15,7 @@ include 'DBConfig.php';
 		 $q = "SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent";
 	 }
 	 else{
-		 $q = "SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent where u_id='$u_id'";
+		 $q = "SELECT r_id,rname,rphoneNumber,rrange,rsocietyName,rtype,date FROM required_rent where u_id in ('$u_id','1')";
 	 }
 	
 

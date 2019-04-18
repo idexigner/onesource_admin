@@ -16,7 +16,7 @@ include 'DBConfig.php';
 		 $q = "SELECT s_id,sname,sphoneNumber,scompleteAddress,ssocietyName,sdemand,stype,sdirection,date FROM sale";
 	 }
 	 else{
-		 $q = "SELECT s_id,sname,sphoneNumber,scompleteAddress,ssocietyName,sdemand,stype,sdirection,date FROM sale where u_id='$u_id'";
+		 $q = "SELECT s_id,sname,sphoneNumber,scompleteAddress,ssocietyName,sdemand,stype,sdirection,date FROM sale where u_id in ('$u_id','1')";
 	 }
 	
 

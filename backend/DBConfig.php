@@ -1,5 +1,5 @@
 <?php
- /*
+ 
 //Define your host here.
 $HostName = "1sourceestate.com";
  
@@ -15,9 +15,9 @@ $HostPass = "FarazHassaan786!";
 
 $con = new mysqli($HostName, $HostUser, $HostPass, $DatabaseName); 
 
-*/
 
 
+/*
 //Define your host here.
 $HostName = "localhost";
  
@@ -33,7 +33,7 @@ $HostPass = "";
 
 $con = new mysqli($HostName, $HostUser, $HostPass, $DatabaseName);
 
-
+*/
 
 
 ?>

@@ -17,7 +17,7 @@ include 'DBConfig.php';
 		$q = "SELECT p.p_id,p.date,p.name as inqName,p.phone,p.ranges,p.societyName,p.type,u.name as userName FROM purchase as p inner join users as u on p.u_id=u.u_id";
 	}
 	else{
-		$q = "SELECT p_id,date,name,phone,ranges,societyName,type FROM purchase where u_id='$u_id'";
+		$q = "SELECT p_id,date,name,phone,ranges,societyName,type FROM purchase where u_id in ('$u_id','1')";
 	}
 	
 
