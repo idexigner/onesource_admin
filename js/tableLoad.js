@@ -1,7 +1,9 @@
-// var Api="http://localhost/onesource_admin/";
-var Api="http://1sourceestate.com/onesource_admin/";
-//console.log("Reachde theere");
-
+if(window.location.href.includes("localhost")){
+    Api = "http://localhost/onesource_admin/";
+}
+else{
+    Api="http://1sourceestate.com/onesource_admin/";
+}
 purchaseTableLoad();
 saleTableLoad();
 availableTableLoad();
@@ -2028,12 +2030,16 @@ var requireBool = true;
 
 $( "#formSelection" ).change(function() {
     // $("#formSelection option").click(function(){
+     
+    
+
         var index = document.getElementById("formSelection").selectedIndex;
         if(index == 0){
          //   alert(index);
             viewDetailsLoad();
         }       
         else if(index == 1){
+            
 
             if(saleBool){
                // saleTableLoad();
@@ -2066,10 +2072,6 @@ $( "#formSelection" ).change(function() {
        //     alert(index);
             document.getElementById("saleDiv").style.display = "block";
 
-            // $("#purchaseTableBody").html("");
-            // $("#availableTableBody").html("");
-            // $("#requireTableBody").html("");
-            
 
             document.getElementById("purchaseDiv").style.display = "none";
             document.getElementById("availableDiv").style.display = "none";
@@ -2167,6 +2169,7 @@ $( "#formSelection" ).change(function() {
         }
        // alert(document.getElementById("formSelection").selectedIndex);
     // });
+
    
   });
 

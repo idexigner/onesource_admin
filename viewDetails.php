@@ -564,7 +564,7 @@ include 'footerCopyright.php';
         src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script>
 
 
-    <script src="js/tableLoad.js"></script>
+    
     <script>
         var toggle = true;
 
@@ -584,12 +584,14 @@ include 'footerCopyright.php';
         });
     </script>
     <!--js -->
+    <script src="js/tableLoad.js" ></script>
     <script src="js/custom.js"></script>
     <!-- <script src="js/jquery.nicescroll.js"></script> -->
     <script src="js/scripts.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- /Bootstrap Core JavaScript -->
+    
    
 
     <script>

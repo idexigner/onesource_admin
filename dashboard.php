@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="four-grids">
 				
 
-					<div class="col-md-3 four-grid">
+					<div class="col-md-3 four-grid" onclick="gridTile('purchase')">
 						<div class="four-agileits">
 						
 							<div class="icon">
@@ -137,7 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 
-					<div class="col-md-3 four-grid">
+					<div class="col-md-3 four-grid" onclick="gridTile('sale')">
 						<div class="four-agileits">
 						
 							<div class="icon">
@@ -152,7 +152,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 
-					<div class="col-md-3 four-grid">
+					<div class="col-md-3 four-grid" onclick="gridTile('available')">
 						<div class="four-agileits">
 						
 							<div class="icon">
@@ -167,7 +167,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 
-					<div class="col-md-3 four-grid">
+					<div class="col-md-3 four-grid" onclick="gridTile('require')">
 						<div class="four-agileits">
 						
 							<div class="icon">

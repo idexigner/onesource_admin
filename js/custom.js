@@ -1,7 +1,12 @@
-var Api="http://1sourceestate.com/onesource_admin/";
-// var Api="http://localhost/onesource_admin/";
+// var Api="http://1sourceestate.com/onesource_admin/";
+// // var Api="http://localhost/onesource_admin/";
 
-
+if(window.location.href.includes("localhost")){
+    Api = "http://localhost/onesource_admin/";
+}
+else{
+    Api="http://1sourceestate.com/onesource_admin/";
+}
 
 var purc_id,require_id,available_id,sale_id;
 
@@ -502,8 +507,21 @@ function onLoadFunction(param){
             }
     }
     else if(param == 'viewDetail'){
-       
+      // debugger
         document.getElementById("viewDetailId").className = "active";
+
+        //  alert(localStorage.getItem('fromPage'));
+        //  alert(localStorage.getItem('tile'));
+      //  document.getElementById("formSelection").selectedIndex=localStorage.getItem('tile');
+      var fromPage = localStorage.getItem('fromPage');
+      if(fromPage == 'true'){
+        $('#formSelection').val(localStorage.getItem('tile'));
+        $('#formSelection').trigger("change");
+      }
+        localStorage.setItem('fromPage',false)
+      
+       
+        
     }
     else if(param == 'viewUser'){
 
@@ -534,4 +552,23 @@ function logout(){
     localStorage.setItem("user", '');
     localStorage.setItem("url", '');
     window.location.href  = "/onesource_admin/index.php";
+}
+
+
+function gridTile(param){
+    localStorage.setItem('fromPage',true)
+    if(param =='purchase'){
+        localStorage.setItem('tile','Purchase'); 
+    }
+    else if (param == 'sale'){
+        localStorage.setItem('tile','Sale'); 
+    }
+    else if (param == 'available'){
+        localStorage.setItem('tile','Available'); 
+    }
+    else if (param == 'require'){
+        localStorage.setItem('tile','Require'); 
+    }
+    // alert(param);
+    window.location.href = Api+'viewDetails.php';
 }
